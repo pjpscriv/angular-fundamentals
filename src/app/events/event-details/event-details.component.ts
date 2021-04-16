@@ -9,7 +9,7 @@ import { Event } from '../shared/event.type';
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  private event: Event;
+  public event: Event;
   private id: number;
 
   constructor(
