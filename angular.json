@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "ng-fundamentals"
+  "defaultProject": "ng-fundamentals",
+  "cli": {
+    "analytics": "07e9d52c-0506-435a-a938-e2337ae8d8ae"
+  }
 }
