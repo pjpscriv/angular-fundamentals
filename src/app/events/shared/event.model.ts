@@ -1,4 +1,4 @@
-interface Session {
+interface ISession {
   id: number;
   name: string;
   presenter: string;
@@ -8,20 +8,18 @@ interface Session {
   voters: Array<string>;
 }
 
-interface Location {
-  address: string;
-  city: string;
-  country: string;
-}
-
-export interface Event {
+export interface IEvent {
   id: number;
   name: string;
-  date: string;
+  date: Date;
   time: string;
   price: number;
   imageUrl: string;
   onlineUrl?: string;
-  location?: Location;
-  sessions: Array<Session>;
+  location?: {
+    address: string;
+    city: string;
+    country: string;
+  };
+  sessions: Array<ISession>;
 }

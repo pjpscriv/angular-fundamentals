@@ -1,23 +1,24 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {IEvent} from '../shared/event.model';
 
 @Component({
-  selector: 'event-thumbnail',
+  selector: 'app-event-thumbnail',
   templateUrl: './event-thumbnail.component.html',
   styleUrls: ['./event-thumbnail.component.scss']
 })
 export class EventThumbnailComponent {
 
-  @Input() public event: any;
-  
+  @Input() public event: IEvent;
+
   getStartTimeClass() {
-    if (!!this.event && this.event.time == '8:00 am') {
+    if (!!this.event && this.event.time === '8:00 am') {
       return 'green bold';
     } else {
-      return []
+      return [];
     }
   }
 
-  getStartTimeStyle():any {
-    return this.event.time == '10:00 am' ? { 'color': 'red', 'font-weight': 'bold' } : '';
+  getStartTimeStyle(): any {
+    return this.event.time === '10:00 am' ? { color: 'red', 'font-weight': 'bold' } : '';
   }
 }
