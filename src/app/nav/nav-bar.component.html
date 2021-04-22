@@ -31,7 +31,7 @@
               <a
                 *ngIf="authService.isAuthenticated()"
                 [routerLink]="['user', 'profile']"
-                routerLinkActive="active">Welcome {{authService.currentUser.firstName}}</a>
+                routerLinkActive="active">Welcome {{ authService.currentUser.firstName }}</a>
             </li>
           </ul>
         </div>

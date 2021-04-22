@@ -17,4 +17,9 @@ export class AuthService {
       lastName: 'The Frog'
     };
   }
+
+  public updateCurrentUser(formValues) {
+    this.currentUser.firstName = formValues.firstName;
+    this.currentUser.lastName = formValues.lastName;
+  }
 }

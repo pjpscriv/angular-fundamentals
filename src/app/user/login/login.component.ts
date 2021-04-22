@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   public userName: string;
   public password: string;
+  public mouseOverLogin = false;
 
   constructor(
     private authService: AuthService,
