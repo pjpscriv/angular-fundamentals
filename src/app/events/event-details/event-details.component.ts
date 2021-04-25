@@ -11,7 +11,7 @@ import {IEvent, ISession} from '../shared/event.model';
 export class EventDetailsComponent implements OnInit {
   public event: IEvent;
   private id: number;
-  private addMode = false;
+  public addMode = false;
 
   constructor(
     private eventService: EventService,
