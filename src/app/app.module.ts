@@ -8,18 +8,19 @@ import { NavbarComponent } from './nav/nav-bar.component';
 import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
-import {RouterModule} from '@angular/router';
-import {appRoutes} from './routes';
-import { CreateEventComponent } from './events/create-event/create-event.component';
-import {Error404Component} from './errors/404.component';
-import {EventRouteActivator} from './events/event-details/event-route-activator';
-import {checkDirtyState} from './events/create-event/event-route-deactivator';
-import {EventsListResolver} from './events/events-list/events-list-resolver';
-import {AuthService} from './user/login/auth.service';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { CreateEventComponent  } from './events/create-event/create-event.component';
+import { Error404Component } from './errors/404.component';
+import { EventRouteActivator } from './events/event-details/event-route-activator';
+import { checkDirtyState } from './events/create-event/event-route-deactivator';
+import { EventsListResolver } from './events/events-list/events-list-resolver';
+import { AuthService } from './user/login/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './events/event-details/create-session/create-session.component';
 import { SessionListComponent } from './events/event-details/session-list/session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { DurationPipe } from './events/shared/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

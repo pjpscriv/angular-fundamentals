@@ -12,6 +12,8 @@ export class EventDetailsComponent implements OnInit {
   public event: IEvent;
   private id: number;
   public addMode = false;
+  public filterBy = 'all';
+  public sortBy = 'votes';
 
   constructor(
     private eventService: EventService,
@@ -33,5 +35,7 @@ export class EventDetailsComponent implements OnInit {
     this.eventService.updateEvent(this.event);
     this.addMode = false;
   }
+
+
 
 }
