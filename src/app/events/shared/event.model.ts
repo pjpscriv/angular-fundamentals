@@ -6,6 +6,7 @@ export interface ISession {
   level: string;
   abstract: string;
   voters: Array<string>;
+  eventId?: number;
 }
 
 export interface IEvent {

@@ -4,7 +4,7 @@ import {IEvent} from '../shared/event.model';
 @Component({
   selector: 'app-event-thumbnail',
   templateUrl: './event-thumbnail.component.html',
-  styleUrls: ['./event-thumbnail.component.scss']
+  styleUrls: ['./event-thumbnail.component.css']
 })
 export class EventThumbnailComponent {
 
