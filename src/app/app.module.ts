@@ -24,6 +24,9 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
 import { DurationPipe } from './events/shared/duration.pipe';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger.directive';
+import { UpvoteComponent } from './events/event-details/upvote/upvote.component';
+import { VoterService } from './events/event-details/upvote/voter.service';
+import {LocationValidator} from './events/create-event/location-validator.directive';
 
 const toastr: Toastr = window['toastr'];
 const jQuery = window['$'];
@@ -42,8 +45,10 @@ const jQuery = window['$'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
-  ],
+    ModalTriggerDirective,
+    UpvoteComponent,
+    LocationValidator
+],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
@@ -54,6 +59,7 @@ const jQuery = window['$'];
     EventService,
     EventRouteActivator,
     EventsListResolver,
+    VoterService,
     AuthService,
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
     { provide: TOASTR_TOKEN, useValue: toastr },

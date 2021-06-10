@@ -339,7 +339,7 @@ export class EventService {
   }
 
   searchSessions(searchTerm: string) {
-    let term = searchTerm.toLocaleLowerCase();
+    const term = searchTerm.toLocaleLowerCase();
     let results: Array<ISession> = [];
 
     this.events.forEach(event => {
