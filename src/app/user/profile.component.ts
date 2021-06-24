@@ -31,13 +31,20 @@ export class ProfileComponent implements OnInit {
 
   public saveProfile(formValues): void {
     if (this.profileForm.valid) {
-      this.auth.updateCurrentUser(formValues);
-      this.toastr.success('Profile saved');
+      this.auth.updateCurrentUser(formValues).subscribe(_ => {
+        this.toastr.success('Profile saved');
+      });
     }
   }
 
   public cancel(): void {
     this.router.navigate(['events']);
+  }
+
+  public logout(): void {
+    this.auth.logoutUser().subscribe(_ => {
+      this.router.navigate(['/user/login']);
+    });
   }
 
   public validateFirstName(): boolean {
@@ -49,6 +56,4 @@ export class ProfileComponent implements OnInit {
     return this.lastName.invalid &&
            this.lastName.touched;
   }
-
-
 }

@@ -9,15 +9,15 @@ import {VoterService} from '../upvote/voter.service';
   styleUrls: ['./session-list.component.css']
 })
 export class SessionListComponent implements OnChanges {
-
   @Input() sessions: Array<ISession>;
+  @Input() eventId: number;
   @Input() filterBy: string;
   @Input() sortBy: string;
   public sessionsViewModel: Array<ISession> = [];
 
   constructor(
     private voterService: VoterService,
-    private auth: AuthService
+    public auth: AuthService
   ) {}
 
   ngOnChanges(): void {
@@ -29,9 +29,9 @@ export class SessionListComponent implements OnChanges {
 
   toggleVote(session: ISession): void {
     if (this.userHasVoted(session)) {
-      this.voterService.deleteVoter(session, this.auth.currentUser.userName);
+      this.voterService.deleteVoter(this.eventId, session, this.auth.currentUser.userName);
     } else {
-      this.voterService.addVoter(session, this.auth.currentUser.userName);
+      this.voterService.addVoter(this.eventId, session, this.auth.currentUser.userName);
     }
 
     if (this.sortBy === 'votes') {

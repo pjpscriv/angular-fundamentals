@@ -13,7 +13,6 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent  } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/404.component';
-import { EventRouteActivator } from './events/event-details/event-route-activator';
 import { checkDirtyState } from './events/create-event/event-route-deactivator';
 import { EventsListResolver } from './events/events-list/events-list-resolver';
 import { AuthService } from './user/login/auth.service';
@@ -27,6 +26,8 @@ import { ModalTriggerDirective } from './common/modal-trigger.directive';
 import { UpvoteComponent } from './events/event-details/upvote/upvote.component';
 import { VoterService } from './events/event-details/upvote/voter.service';
 import {LocationValidator} from './events/create-event/location-validator.directive';
+import {HttpClientModule} from '@angular/common/http';
+import {EventResolver} from './events/event-details/event-resolver';
 
 const toastr: Toastr = window['toastr'];
 const jQuery = window['$'];
@@ -53,11 +54,12 @@ const jQuery = window['$'];
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     EventService,
-    EventRouteActivator,
+    EventResolver,
     EventsListResolver,
     VoterService,
     AuthService,
