@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SimpleModalComponent } from './simple-modal.component';
+import {SimpleModalComponent} from './simple-modal.component';
+import {JQ_TOKEN} from '../jquery.service';
 
 describe('SimpleModalComponent', () => {
   let component: SimpleModalComponent;
@@ -8,7 +9,8 @@ describe('SimpleModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimpleModalComponent ]
+      declarations: [ SimpleModalComponent ],
+      providers: [{ provide: JQ_TOKEN, useValue: null }]
     })
     .compileComponents();
   }));

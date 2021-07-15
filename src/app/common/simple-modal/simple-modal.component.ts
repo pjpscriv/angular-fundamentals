@@ -9,8 +9,9 @@ import {JQ_TOKEN} from '../jquery.service';
 })
 export class SimpleModalComponent {
 
-  constructor(@Inject(JQ_TOKEN) private $: any) {
-  }
+  constructor(
+    @Inject(JQ_TOKEN) private $: any
+  ) {}
 
   @Input() title: string;
   @Input() elementId: string;

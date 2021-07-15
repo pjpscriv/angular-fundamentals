@@ -9,7 +9,9 @@ import {catchError} from 'rxjs/operators';
 })
 export class VoterService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) {}
 
   deleteVoter(eventId: number, session: ISession, voterName: string): void {
     session.voters = session.voters.filter(voter => voter !== voterName);
