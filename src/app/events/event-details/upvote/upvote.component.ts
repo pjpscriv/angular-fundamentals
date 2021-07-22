@@ -6,16 +6,12 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./upvote.component.css']
 })
 export class UpvoteComponent {
-
   @Input() count: number;
-  @Input() set voted(value) {
+  @Input() set voted(value: boolean) {
     this.iconColor = value ? 'red' : 'white';
   }
   @Output() vote = new EventEmitter();
   public iconColor = 'white';
-
-
-  constructor() { }
 
   onClick(): void {
     this.vote.emit();

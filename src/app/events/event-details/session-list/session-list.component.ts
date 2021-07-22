@@ -44,7 +44,7 @@ export class SessionListComponent implements OnChanges {
 
   }
 
-  private filterSessions(filter: string) {
+  private filterSessions(filter: string): void {
     if (filter === 'all') {
       this.sessionsViewModel = this.sessions.slice(0);
     } else {
@@ -53,7 +53,7 @@ export class SessionListComponent implements OnChanges {
   }
 }
 
-function sortByNameAsc(s1: ISession, s2: ISession) {
+function sortByNameAsc(s1: ISession, s2: ISession): number {
   if (s1.name > s2.name) {
     return 1;
   } else if (s1.name === s2.name) {
@@ -63,7 +63,7 @@ function sortByNameAsc(s1: ISession, s2: ISession) {
   }
 }
 
-function sortByVotesDesc(s1: ISession, s2: ISession) {
+function sortByVotesDesc(s1: ISession, s2: ISession): number {
   if (s1.voters.length < s2.voters.length) {
     return 1;
   } else if (s1.voters.length === s2.voters.length) {

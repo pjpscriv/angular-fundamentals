@@ -12,10 +12,10 @@ export class EventsListComponent implements OnInit {
 
   constructor(
     private eventService: EventService,
-    private route: ActivatedRoute) {
-  }
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.events = this.route.snapshot.data['events'];
   }
 }

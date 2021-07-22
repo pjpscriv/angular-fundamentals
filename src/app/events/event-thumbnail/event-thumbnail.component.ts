@@ -10,11 +10,11 @@ export class EventThumbnailComponent {
 
   @Input() public event: IEvent;
 
-  getStartTimeClass() {
+  getStartTimeClass(): string {
     if (!!this.event && this.event.time === '8:00 am') {
       return 'green bold';
     } else {
-      return [];
+      return '';
     }
   }
 

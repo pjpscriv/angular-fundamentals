@@ -20,7 +20,7 @@ export class NavbarComponent {
     this.eventService.getEvents().subscribe(events => this.events = events);
   }
 
-  public searchSessions(searchTerm) {
+  public searchSessions(searchTerm: string): void {
     this.eventService.searchSessions(searchTerm).subscribe(sessions => {
       this.foundSessions = sessions;
     });

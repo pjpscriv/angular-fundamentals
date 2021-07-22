@@ -32,6 +32,7 @@ export class AuthService {
           this.currentUser = data['user'] as IUser;
       }),
       catchError(data => {
+        console.error(data);
         return of(false);
       }));
   }

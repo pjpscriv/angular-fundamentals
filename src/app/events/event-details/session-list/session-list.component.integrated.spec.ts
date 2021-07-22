@@ -6,8 +6,6 @@ import {AuthService} from '../../../user/login/auth.service';
 import {VoterService} from '../upvote/voter.service';
 import {DurationPipe} from '../../shared/duration.pipe';
 import {By} from '@angular/platform-browser';
-import {CollapsibleWellComponent} from '../../../common/collapsible-well/collapsible-well.component';
-import {UpvoteComponent} from '../upvote/upvote.component';
 
 describe('SessionListComponent', () => {
   let mockAuthService: AuthService;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AuthService} from './auth.service';
 import {Router} from '@angular/router';
 
@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   public userName: string;
   public password: string;
   public mouseOverLogin = false;
@@ -16,11 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-  ) { }
-
-  ngOnInit(): void {
-
-  }
+  ) {}
 
   login(formVals): void {
     console.log(formVals);

@@ -18,7 +18,7 @@ export class SimpleModalComponent {
   @Input() closeOnBodyClick = false;
   @ViewChild('modalContainer') containerEl: ElementRef;
 
-  public bodyClick() {
+  public bodyClick(): void {
     if (this.closeOnBodyClick) {
       this.$(this.containerEl.nativeElement).modal('hide');
     }

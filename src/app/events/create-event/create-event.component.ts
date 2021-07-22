@@ -14,14 +14,14 @@ export class CreateEventComponent {
 
   constructor(
     private router: Router,
-    private eventService: EventService) { }
+    private eventService: EventService) {}
 
   public cancel(): void {
     this.router.navigate(['events']);
   }
 
   public saveEvent(formValues): void {
-    this.eventService.saveEvent(formValues).subscribe(_ => {
+    this.eventService.saveEvent(formValues).subscribe(() => {
       this.isDirty = false;
       this.router.navigate(['events']);
     });

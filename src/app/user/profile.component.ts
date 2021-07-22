@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
     @Inject(TOASTR_TOKEN) private toastr: Toastr) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.firstName = new FormControl(this.auth.currentUser.firstName, [Validators.required, Validators.pattern('[a-zA-Z].*')]);
     this.lastName = new FormControl(this.auth.currentUser.lastName, [Validators.required]);
     this.profileForm = new FormGroup({
@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
 
   public saveProfile(formValues): void {
     if (this.profileForm.valid) {
-      this.auth.updateCurrentUser(formValues).subscribe(_ => {
+      this.auth.updateCurrentUser(formValues).subscribe(() => {
         this.toastr.success('Profile saved');
       });
     }
@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit {
   }
 
   public logout(): void {
-    this.auth.logoutUser().subscribe(_ => {
+    this.auth.logoutUser().subscribe(() => {
       this.router.navigate(['/user/login']);
     });
   }

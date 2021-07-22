@@ -19,8 +19,6 @@ export class CreateSessionComponent implements OnInit {
   public abstract: FormControl;
   public newSessionForm: FormGroup;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.name = new FormControl('', Validators.required);
     this.presenter = new FormControl('', Validators.required);
@@ -37,7 +35,7 @@ export class CreateSessionComponent implements OnInit {
     });
   }
 
-  public saveSession(formValues) {
+  public saveSession(formValues): void {
     const session: ISession = {
       id: undefined,
       voters: [],
