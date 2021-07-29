@@ -9,7 +9,7 @@ import { EventService } from './events/shared/event.service';
 import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
 import { JQ_TOKEN } from './common/jquery.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { CreateEventComponent  } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/404.component';
@@ -52,7 +52,7 @@ const jQuery = window['$'];
 ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
